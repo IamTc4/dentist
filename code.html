@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Dental Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0891b2", // Cyan 600
+                        "primary-dark": "#0e7490", // Cyan 700
+                        "secondary": "#0f172a", // Slate 900
+                        "accent": "#f0f9ff", // Sky 50
+                        "surface": "#ffffff",
+                        "light-gray": "#f8fafc",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-light-gray text-secondary font-body overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined" style="font-size: 24px;">dentistry</span>
+</div>
+<h2 class="text-xl font-display font-extrabold tracking-tight text-secondary">Lumina Dental</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#services">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#testimonials">Testimonials</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="hidden sm:flex items-center gap-4">
+<a class="hidden lg:flex items-center gap-2 text-sm font-bold text-secondary hover:text-primary" href="tel:+1234567890">
+<span class="material-symbols-outlined text-primary">call</span>
+                        (555) 123-4567
+                    </a>
+<a class="flex items-center justify-center rounded-full bg-primary h-10 px-6 text-white text-sm font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/30" href="#appointment">
+                        Book Now
+                    </a>
+</div>
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-col flex pt-20">
+<section class="relative px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden bg-gradient-to-b from-white to-light-gray">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-6 flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 self-start rounded-full bg-accent border border-primary/20 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>#1 Rated Clinic</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.1] tracking-tight text-secondary">
+                            Trusted Dental Care for <span class="text-primary relative inline-block">
+                                Your Family
+                                <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary/20" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path>
+</svg>
+</span>
+</h1>
+<p class="text-gray-600 text-lg leading-relaxed max-w-xl">
+                            Experience pain-free dentistry with our expert team. From check-ups to cosmetic surgery, we create smiles that last a lifetime using state-of-the-art technology.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-2 rounded-full h-14 px-8 bg-primary text-white text-base font-bold hover:bg-primary-dark transition-all shadow-xl shadow-primary/20" href="#appointment">
+<span class="material-symbols-outlined">calendar_month</span>
+<span>Book Appointment</span>
+</a>
+<a class="flex items-center gap-2 rounded-full h-14 px-8 bg-white border border-gray-200 hover:border-primary hover:text-primary text-secondary text-base font-bold transition-all shadow-sm hover:shadow-md" href="#services">
+<span>Our Services</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<div class="flex -space-x-4">
+<div class="size-12 rounded-full border-4 border-white bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGz0n2cCx00L1hCupxVKEFLUabDdijxc2fmq-mTyoMjvPSzlNyoF7D3F_FMNDOVUg2_iRN8HAwiIjGjBYYNfl7smq9zdSKfUKhOb5Wax3JXNT4ekhkn5hws0ja8zfeGa6ob3UGAEWwqkv3Jbkz2720cPBxqEEDd1pgmQidUG9u2-PwUnM8KAvGnYWOMTPO2UkNY0dREkHeHZg8K7GoCCO3TN1bJxm_D31-tLrSPEYqfolVmXLuDmEaIs6zsuejoTxAGLFZktApb1mB");'></div>
+<div class="size-12 rounded-full border-4 border-white bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDi0ZtLMPjU7pFJHER8zC3jLrYFIrlVrf29r4rRZlssCmWju9jQJ1002jzvsVvypWNA6wmKA9dRxUrSMe99P6N1ds7X702DVnG1dUt2X5T8u3DAfB00f0zpWrb7I2I89OqK9p6YZ0lMdGrjZT3b59jdc8ZMmtE6w61o1XfWoPZy45TD7xNh3W1-TkcjvrMDctU9v4QtAZHjT3Wf2prgD0QC7V1DG4NIxqcmuFsLQf98a4y9ntISsk1L8gFZBV7Z-OGdjJSyyHXOQOLW");'></div>
+<div class="size-12 rounded-full border-4 border-white bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCk3ro2IVdPQf_ayPs7LUXuXz-KbuG31ljlpdvQLiiD03mhU0zKVSgVYLeOF17-YwYkDhYvKGGQEhbonm5QYXX8hf8kBpEQXMM3JbfAj3jnStmAdaeyAYtNZo5l7qQc3spE0YFFpocvvTggPlxOEhxOjo99YQXnKnWYkZagS-fXqeUdGY1MdnnkiQrinYcc1smilQoHdatx_KHH9bsI2kDVDPtHZQLTz2lO9Th49m0oDu23UCVm3fiyEoaMPQZ5jLBrI1LaUi9CId6N");'></div>
+<div class="size-12 rounded-full border-4 border-white bg-primary flex items-center justify-center text-xs font-bold text-white">
+                                500+
+                            </div>
+</div>
+<div class="flex flex-col">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-[20px] fill-current">star</span>
+</div>
+<span class="text-sm font-bold text-gray-500">From happy patients</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="relative w-full aspect-[4/5] md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
+<div class="absolute -top-20 -right-20 size-80 bg-primary/20 blur-[80px] rounded-full"></div>
+
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105" data-alt="Friendly dentist" style='background-image: url("w.png")'>
+    <img src="w.png" alt="Friendly dentist" class="w-full h-full object-cover opacity-0" />
+</div>
+<div class="absolute bottom-8 left-8 bg-white/95 backdrop-blur border border-white/20 p-4 rounded-2xl shadow-xl max-w-[180px] animate-fade-in-up">
+<div class="flex items-center gap-3 mb-2">
+<div class="p-2 bg-green-100 rounded-full text-green-600">
+<span class="material-symbols-outlined text-xl">sentiment_satisfied</span>
+</div>
+<span class="text-3xl font-bold text-secondary">5k+</span>
+</div>
+<p class="text-sm text-gray-500 font-medium">Happy Smiles Created</p>
+</div>
+<div class="absolute top-8 right-8 bg-white/95 backdrop-blur border border-white/20 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-fade-in-down">
+<div class="p-2 bg-primary/10 rounded-full text-primary">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<div>
+<p class="text-base font-bold text-secondary">100% Verified</p>
+<p class="text-xs text-gray-500 font-medium">Top Specialists</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-5 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<div>
+<p class="text-3xl font-bold text-secondary leading-none mb-1">15+</p>
+<p class="text-sm font-medium text-gray-500">Years of Experience</p>
+</div>
+</div>
+<div class="flex items-center gap-5 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">thumb_up</span>
+</div>
+<div>
+<p class="text-3xl font-bold text-secondary leading-none mb-1">98%</p>
+<p class="text-sm font-medium text-gray-500">Patient Satisfaction</p>
+</div>
+</div>
+<div class="flex items-center gap-5 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<div>
+<p class="text-3xl font-bold text-secondary leading-none mb-1">24/7</p>
+<p class="text-sm font-medium text-gray-500">Emergency Support</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-primary font-bold tracking-wider uppercase text-sm">Our Services</span>
+<h2 class="text-3xl md:text-4xl font-display font-bold mt-2 mb-4 text-secondary">Comprehensive Dental Solutions</h2>
+<p class="text-gray-600">We offer a wide range of dental services to ensure your smile stays healthy and beautiful.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+</div>
+<h3 class="text-xl font-bold mb-3">General Dentistry</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Routine check-ups, cleanings, and preventive care to keep your teeth healthy.</p>
+</div>
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">auto_fix</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Cosmetic Dentistry</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Teeth whitening, veneers, and bonding to give you the perfect smile.</p>
+</div>
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Pediatric Dentistry</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Gentle and friendly dental care specialized for children of all ages.</p>
+</div>
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">masks</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Orthodontics</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Braces and aligners to correct teeth alignment and bite issues.</p>
+</div>
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">build</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Dental Implants</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Permanent and natural-looking solutions for missing teeth replacement.</p>
+</div>
+<div class="group p-8 rounded-3xl bg-light-gray hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer">
+<div class="size-14 bg-white rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">medical_information</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Emergency Care</h3>
+<p class="text-gray-500 group-hover:text-white/90 leading-relaxed">Immediate attention for dental emergencies, available 24/7 for you.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-light-gray overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="absolute -top-10 -left-10 size-40 bg-primary/10 rounded-full blur-2xl"></div>
+<img alt="Dental Team" class="relative rounded-3xl shadow-2xl z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCattJpjYVVFtdCdiVI8eODpfojdLcA7b1_h7584YRdiPrmEzNpfpb-8jvc09VHgyF9yWkChK9J2DXzc4f8YPy-cZ-mLhNmhhQKPLso4tuKhV2AGgAql8cuNPX1Kyw5OsdFdRjpGU7kwgztAXFPqDreiFI5NvqMnqp_V5c6hffJQlrq9mzmqAFpCvEbxBTZyiXE0RfevQVzpHLgdJT0R3uudXRDmBJszZ2sLBVXErtrvBqJxSDt0tCyaP4eYV3N2tVgphDHImok0mqB"/>
+<div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20 max-w-xs">
+<p class="text-4xl font-display font-extrabold text-primary mb-1">20+</p>
+<p class="text-secondary font-bold">Expert Doctors</p>
+<p class="text-sm text-gray-500">Dedicated to your smile</p>
+</div>
+</div>
+<div>
+<span class="text-primary font-bold tracking-wider uppercase text-sm">About Us</span>
+<h2 class="text-3xl md:text-4xl font-display font-bold mt-2 mb-6 text-secondary">We Are Redefining the Dental Experience</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                            At Lumina Dental, we believe that going to the dentist should be a positive and empowering experience. Our state-of-the-art facility is designed with your comfort in mind, combining cutting-edge technology with a warm, welcoming atmosphere.
+                        </p>
+<p class="text-gray-600 mb-8 leading-relaxed">
+                            Our team of highly skilled specialists covers every aspect of dentistry, ensuring you receive comprehensive care under one roof. We take the time to listen to your concerns and customize treatments to your unique needs.
+                        </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-secondary font-medium">Advanced Digital X-Rays</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-secondary font-medium">Comfortable Massage Chairs</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-secondary font-medium">Transparent Pricing</span>
+</li>
+</ul>
+<button class="bg-secondary text-white px-8 py-3 rounded-full font-bold hover:bg-secondary/90 transition-colors">
+                            Learn More About Us
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white" id="testimonials">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-primary font-bold tracking-wider uppercase text-sm">Testimonials</span>
+<h2 class="text-3xl md:text-4xl font-display font-bold mt-2 mb-4 text-secondary">What Our Patients Say</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-light-gray p-8 rounded-3xl border border-gray-100">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-gray-600 mb-6">"The best dental experience I've ever had. The staff is incredibly friendly and professional. I felt completely at ease during my procedure."</p>
+<div class="flex items-center gap-4">
+<img alt="Patient" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzeWEXYIauTeNN4vAp3HaChKAwp-BRwdAVIWgbZvw8EyjmaPoChfGwYo1-CI12_aflgNgoKB4QQrTLOtnQpRh8WM6NqB5JCIUuq-_WqooFxX4jHJDcuMX62OZSrJnfJczipcm9BTzL4pbn99WdU-SD36rxSIJTz0uiGrqW5TzDpcbaiJ4qmcngyymzXnbk7jwaeb3LfYOLXrleSqUaCwIzxRi2qMKXE8cNreYQ2g9mnLMCTOzyW4n7HHFJi1xlTAO-UB84Ha_uWnBU"/>
+<div>
+<h4 class="font-bold text-secondary">Sarah Johnson</h4>
+<p class="text-xs text-gray-500">Local Patient</p>
+</div>
+</div>
+</div>
+<div class="bg-light-gray p-8 rounded-3xl border border-gray-100">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-gray-600 mb-6">"Dr. Smith is amazing! I had a complex root canal and didn't feel a thing. The clinic is modern and very clean. Highly recommended!"</p>
+<div class="flex items-center gap-4">
+<img alt="Patient" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxpay_HIZNS53WnOKPy8wGvjx0zux9pILdK4FXAj9jo0otH_KXd-VRRH9znFteZ904iqC6PuFhpPCPjeNH42bPCkmjZ_a4O671alHTosSRoRbPT8tx263WKhetMEX7ZY5KR7VMDyi4h-DS1Dan7TFB0E9T8tb8W6LiYb3sqRWimKHZpYyYxZs9m2XHQauTFc9rsRgS7imeHe6oiNm1BMqhw2J3PKl6DFJdEgb3xd3uHEN68ya-u52sxu7UcSYEwT9VK6WdZr-G6K9o"/>
+<div>
+<h4 class="font-bold text-secondary">Michael Chen</h4>
+<p class="text-xs text-gray-500">Local Patient</p>
+</div>
+</div>
+</div>
+<div class="bg-light-gray p-8 rounded-3xl border border-gray-100">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+<span class="material-symbols-outlined fill-current">star</span>
+</div>
+<p class="text-gray-600 mb-6">"I brought my kids here for their first check-up and the pediatric team was fantastic. They made it fun and my kids actually want to go back!"</p>
+<div class="flex items-center gap-4">
+<img alt="Patient" class="size-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkOhL5oYfThio8yNXXlSSzTYC5CoclcUQjdnfzaXH_bCk0rvTGDCH2hqAzY-Q_dIfaS28-vkOoeH6ng2D-AHK3Qq0RiF-SgrzinFW3tyl7K2INE6G2XWNG6yIjKe3aFzX6ORXF7OjsEyaonMHMHS05seoP_dJZG0642_NRNdhUolf13GRDxTv-imln7ZJTRjiKkBhUbFH1eBI493u6lBjgkUX83COs3y0rLJZcKajUx3rO223_KUoUKllhII04n8DVxKDbzRMHJg4q"/>
+<div>
+<h4 class="font-bold text-secondary">Emily Davis</h4>
+<p class="text-xs text-gray-500">Mother of two</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-light-gray" id="gallery">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<span class="text-primary font-bold tracking-wider uppercase text-sm">Gallery</span>
+<h2 class="text-3xl md:text-4xl font-display font-bold mt-2 text-secondary">Our Clinic</h2>
+</div>
+<button class="text-primary font-bold hover:text-primary-dark flex items-center gap-2">
+                        View All Photos <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[600px]">
+<div class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden group relative">
+<img alt="Clinic Interior" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJHX5p4SRTSLG1sHqA9iPNKnikpfXOPbL3FRgk9-Q24Y4izegfOvisVKG5YNjbdDwRHG1g9mYw8Pv4rHkepXpMeaDg-MsfXA1g6e1fe43mm9NIYL3p_e2ggnC_nePpzYetD1kjLInnZvi8e3ghs_XUJAyq7mu5eaNb-udHctjzD1Q5iram-kRbarLTudmXt7PwDs3z9BvuSr8Cnc3o1624i0J7PLiJuxCj_0EkSYZ4mSV6FnJnb_b5SfnGxG9GtTOm3YS9lwyLGz8R"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img alt="Equipment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-luDeQvPMeRl4lntgNikEDgz8RS3fquVeuvX--qjJdb9bMKCJdMfS9tdPZoYleCfA7nqQarVMZzy5ZFxOHhcvJaPZk4H-qosQ32oGVUpxZYuhmstrFsItJXfK-AjHmqk2KuCEIMzey8cIZmFUHxyvtYS2dld9bnba3os3vQEVFjgLt_5yQY1GiK62PBxm8Tp43foCEZavtb5_H1Sh0aklzNNFYubrm7pSS3weD6ERPxljkvwRJK-ZZYTVrnUrAmUWQixNKs9epAgr"/>
+</div>
+<div class="rounded-2xl overflow-hidden group relative">
+<img alt="Dentist working" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDotVdSw9bxDGVN9XTDLbAAHeDriYfRvVi7eWtREZT1Z4DdCAZOycsr8UG6PybO6RL1g4m0xN9ma4r0Ee0xHddDF4DwXZSbBPzxiir46fr8l-5NkDOh7-Ris4m8Z6b2mz_c8bsH2LITQQB5TVSxkrVTRfe6XKhoucyRD9z5NQBS7oahIwOsSGo926_yddp8XiHVP9JhH33vCRT6s2gik5pq2gnzOIPMYzCNgMLWFdXmyD_ga1KVdmQMGPKIBmJebO8Fq9pcHzGZT-gN"/>
+</div>
+<div class="md:col-span-2 rounded-2xl overflow-hidden group relative">
+<img alt="Waiting Area" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSPO-vpD79aOAjxyG6d1f1Fu3rU_WYaLbjs4lVLQHC3gcN3-SiAbtZGHYXrtjUVNnZVPLz8kFuZn9PjxeQyl0InzYwvlu0HHnM0WDKht1VqQE25T0EMMIdIIX3TrDegh3yojhAtTYxFmnFQ6j5h9UH8PRJkEXXB9aM0ZJDFUhY3NdUPeM8KVj0alv8A3Mnlxyirm0qsgl0poslqRGT5sGKIS0-DeXGgCSEaNq2UsMPE0OOBgOkAKmL7XfdN2nvNtl1ocXYfpQ4sBnN"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white" id="appointment">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+<div>
+<span class="text-primary font-bold tracking-wider uppercase text-sm">Book an Appointment</span>
+<h2 class="text-3xl md:text-4xl font-display font-bold mt-2 mb-6 text-secondary">Ready for Your New Smile?</h2>
+<p class="text-gray-600 mb-8">Fill out the form below and we will get back to you shortly to confirm your appointment.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+<input class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+<input class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Service</label>
+<select class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12">
+<option>General Checkup</option>
+<option>Teeth Whitening</option>
+<option>Root Canal</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Message (Optional)</label>
+<textarea class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary" placeholder="Any specific concerns?" rows="4"></textarea>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<button class="flex-1 bg-primary text-white h-12 rounded-full font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/25" type="submit">
+                                    Book Appointment
+                                </button>
+<button class="flex-1 bg-[#25D366] text-white h-12 rounded-full font-bold hover:brightness-110 transition-all shadow-lg shadow-[#25d366]/25 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined">chat</span>
+                                    WhatsApp Us
+                                </button>
+</div>
+</form>
+</div>
+<div class="flex flex-col gap-8">
+<div class="bg-light-gray p-8 rounded-3xl h-full flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-bold mb-6 text-secondary">Clinic Information</h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="size-10 rounded-full bg-white flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-bold text-secondary">Address</p>
+<p class="text-gray-600">123 Dental Street, Suite 100<br/>Medical District, NY 10001</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="size-10 rounded-full bg-white flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-bold text-secondary">Opening Hours</p>
+<p class="text-gray-600">Mon - Fri: 9:00 AM - 7:00 PM</p>
+<p class="text-gray-600">Sat: 10:00 AM - 4:00 PM</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="size-10 rounded-full bg-white flex items-center justify-center text-red-500 shrink-0 shadow-sm">
+<span class="material-symbols-outlined">emergency</span>
+</div>
+<div>
+<p class="font-bold text-secondary">Emergency Contact</p>
+<p class="text-red-500 font-bold">(555) 999-8888</p>
+<p class="text-gray-500 text-xs">Available 24/7</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-8 rounded-xl overflow-hidden h-48 bg-gray-200 relative">
+<iframe allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25986763304465!3d40.69714941680757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043276541!5m2!1sen!2s" style="border:0;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-secondary text-white pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">dentistry</span>
+</div>
+<h2 class="text-xl font-display font-bold">Lumina Dental</h2>
+</div>
+<p class="text-gray-400 leading-relaxed">
+                        Providing exceptional dental care with a gentle touch. Your smile is our top priority.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Quick Links</h3>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#home">Home</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#about">About Us</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#services">Services</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#testimonials">Testimonials</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#contact">Book Appointment</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Our Services</h3>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#">General Dentistry</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#">Cosmetic Dentistry</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#">Pediatric Care</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#">Dental Implants</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="#">Emergency Care</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Contact Us</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span>123 Dental Street<br/>New York, NY 10001</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>(555) 123-4567</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>hello@luminadental.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+<p>© 2024 Lumina Dental Clinic. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
