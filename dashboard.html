@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinic Admin Dashboard | DentaFlow AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: {
+                        DEFAULT: '#4F46E5', // Indigo 600
+                        dark: '#4338CA',
+                    },
+                    secondary: '#0F172A',
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+    <nav class="bg-secondary text-white p-4 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center size-8 rounded-lg bg-primary text-white font-bold">D</div>
+                <h1 class="text-xl font-bold">DentaFlow AI Dashboard</h1>
+            </div>
+            <div class="text-sm">
+                <a href="/" class="hover:text-primary transition-colors">View Live Site &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Appointments Section -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="p-6 border-b border-gray-200 bg-gray-50 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-secondary">Upcoming Appointments</h2>
+                <a href="/booking" target="_blank" class="text-sm bg-primary text-white px-3 py-1 rounded-lg hover:bg-primary-dark">New Booking</a>
+            </div>
+            <div class="p-0">
+                <ul id="appointments-list" class="divide-y divide-gray-200">
+                    <li class="p-6 text-center text-gray-500">Loading appointments...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Demo Requests Section -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="p-6 border-b border-gray-200 bg-gray-50">
+                <h2 class="text-lg font-bold text-secondary">SaaS Demo Requests</h2>
+                <p class="text-sm text-gray-500">Inquiries from the main landing page</p>
+            </div>
+            <div class="p-0">
+                <ul id="demos-list" class="divide-y divide-gray-200">
+                    <li class="p-6 text-center text-gray-500">Loading requests...</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function fetchAppointments() {
+            try {
+                const res = await fetch('/api/appointments');
+                const data = await res.json();
+                const list = document.getElementById('appointments-list');
+
+                if (data.length === 0) {
+                    list.innerHTML = '<li class="p-6 text-center text-gray-500">No upcoming appointments.</li>';
+                    return;
+                }
+
+                list.innerHTML = data.map(apt => `
+                    <li class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-bold text-gray-900">${apt.patient_name}</p>
+                                <p class="text-sm text-gray-600">${apt.patient_phone}</p>
+                                <div class="mt-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    ${apt.service_type}
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-gray-900">${new Date(apt.appointment_time).toLocaleString()}</p>
+                                <p class="text-xs text-green-600 font-medium mt-1">${apt.status}</p>
+                            </div>
+                        </div>
+                    </li>
+                `).join('');
+            } catch (error) {
+                document.getElementById('appointments-list').innerHTML = '<li class="p-6 text-center text-red-500">Failed to load appointments.</li>';
+            }
+        }
+
+        async function fetchDemos() {
+            try {
+                const res = await fetch('/api/demos');
+                const data = await res.json();
+                const list = document.getElementById('demos-list');
+
+                if (data.length === 0) {
+                    list.innerHTML = '<li class="p-6 text-center text-gray-500">No demo requests yet.</li>';
+                    return;
+                }
+
+                list.innerHTML = data.map(req => `
+                    <li class="p-6 hover:bg-gray-50 transition-colors">
+                        <div class="mb-2">
+                            <p class="font-bold text-gray-900">${req.clinic_name}</p>
+                            <p class="text-sm text-gray-600">Contact: ${req.name} (${req.email})</p>
+                        </div>
+                        ${req.message ? `<p class="text-sm text-gray-700 bg-gray-100 p-3 rounded-lg mt-2">${req.message}</p>` : ''}
+                        <p class="text-xs text-gray-400 mt-3">Requested on ${new Date(req.created_at).toLocaleDateString()}</p>
+                    </li>
+                `).join('');
+            } catch (error) {
+                document.getElementById('demos-list').innerHTML = '<li class="p-6 text-center text-red-500">Failed to load requests.</li>';
+            }
+        }
+
+        // Initialize
+        fetchAppointments();
+        fetchDemos();
+    </script>
+</body>
+</html>

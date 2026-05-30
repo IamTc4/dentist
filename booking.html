@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Booking | DentaFlow AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: {
+                        DEFAULT: '#4F46E5', // Indigo 600
+                        dark: '#4338CA', // Indigo 700
+                    },
+                    secondary: {
+                        DEFAULT: '#0F172A', // Slate 900
+                    }
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full overflow-hidden">
+        <div class="bg-primary p-6 text-white text-center">
+            <h1 class="text-2xl font-bold">Book an Appointment</h1>
+            <p class="text-primary-100 mt-2">Module 1 - Patient Booking Flow</p>
+        </div>
+        <div class="p-8">
+            <form id="booking-form" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="patient-name" required class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="patient-phone" required class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12" placeholder="(555) 000-0000">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Service Required</label>
+                    <select id="service-type" required class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12">
+                        <option value="" disabled selected>Select a service...</option>
+                        <option value="Checkup & Cleaning">Checkup & Cleaning</option>
+                        <option value="Root Canal">Root Canal Consult</option>
+                        <option value="Whitening">Teeth Whitening</option>
+                        <option value="Emergency">Dental Emergency (Pain)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date & Time</label>
+                    <input type="datetime-local" id="appointment-time" required class="w-full rounded-xl border-gray-300 focus:border-primary focus:ring-primary h-12">
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/30">
+                    Confirm Booking
+                </button>
+                <div id="booking-response" class="hidden mt-4 p-4 rounded-xl text-center font-medium"></div>
+            </form>
+            <div class="mt-6 text-center text-sm text-gray-500">
+                <a href="/" class="hover:text-primary transition-colors">&larr; Back to Main Site</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('booking-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formResponse = document.getElementById('booking-response');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+
+            submitBtn.innerText = 'Booking...';
+            submitBtn.disabled = true;
+            formResponse.classList.add('hidden');
+
+            const data = {
+                patient_name: document.getElementById('patient-name').value,
+                patient_phone: document.getElementById('patient-phone').value,
+                service_type: document.getElementById('service-type').value,
+                appointment_time: document.getElementById('appointment-time').value
+            };
+
+            try {
+                const res = await fetch('/api/appointments', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                if (res.ok) {
+                    formResponse.innerText = 'Appointment booked successfully!';
+                    formResponse.className = 'mt-4 p-4 rounded-xl text-center font-medium bg-green-100 text-green-700 block';
+                    e.target.reset();
+                } else {
+                    formResponse.innerText = result.detail || 'Failed to book appointment.';
+                    formResponse.className = 'mt-4 p-4 rounded-xl text-center font-medium bg-red-100 text-red-700 block';
+                }
+            } catch (err) {
+                formResponse.innerText = 'Network error. Please try again.';
+                formResponse.className = 'mt-4 p-4 rounded-xl text-center font-medium bg-red-100 text-red-700 block';
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
